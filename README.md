@@ -1,5 +1,5 @@
-# Popover Widget
+# Trello
 
-[![Build](https://github.com/Eventoi/Popover/actions/workflows/deploy.yml/badge.svg)](https://github.com/Eventoi/Popover/actions)
+[![Build](https://github.com/Eventoi/Trello/actions/workflows/deploy.yml/badge.svg)](https://github.com/Eventoi/Trello/actions)
 
-Демонстрация: [https://Eventoi.github.io/Popover](https://Eventoi.github.io/Popover)
+Демонстрация: [https://Eventoi.github.io/Trello](https://Eventoi.github.io/Trello)

@@ -1,9 +1,120 @@
+/* Общие стили */
+
 body {
+  font-family: Arial, sans-serif;
+  background: #f4f5f7;
   margin: 0;
-  font-family: sans-serif;
-  background-color: #f4f5f7;
+  padding: 20px;
+  user-select: none; /* Чтобы нельзя было выделять текст при drag */
 }
 
-#app {
-  padding: 20px;
+#board {
+  display: flex;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Колонки */
+
+.column {
+  background: #ebecf0;
+  border-radius: 3px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.column-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Контейнер для карточек */
+
+.cards {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 40px; /* Чтобы была возможность дропнуть даже в пустую колонку */
+}
+
+/* Карточка */
+
+.card {
+  background: white;
+  padding: 10px 40px 10px 10px;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  cursor: grab;
+  position: relative;
+  user-select: none;
+  transition: box-shadow 0.2s ease;
+}
+
+/* При перетаскивании меняем курсор */
+
+.card.grabbing {
+  cursor: grabbing;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Плейсхолдер */
+
+.card.placeholder {
+  background: #dfe3e6;
+  border: 2px dashed #b0b8c1;
+  height: 50px; /* По умолчанию, можно менять в JS */
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Крестик удаления */
+
+.delete-card {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #999;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, color 0.1s ease;
+  user-select: none;
+  line-height: 1;
+}
+
+.delete-card:active {
+  color: red;
+}
+
+/* Показываем крестик при наведении на карточку */
+
+.card:hover .delete-card {
+  opacity: 1;
+}
+
+/* Кнопка добавления карточки */
+
+.add-card {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #5aac44;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.add-card:hover {
+  background-color: #519839;
 }
