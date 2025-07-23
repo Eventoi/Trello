@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f4f5f7;
+}
+
+#app {
+  padding: 20px;
+}
